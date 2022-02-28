@@ -8,11 +8,13 @@ it('Searching,filtering and adding product', function()
     cy.visit("https://www.amazon.com/");
 
     //searching for shoes
-    cy.get('#twotabsearchtextbox').type('shoes');
+    cy.get('#twotabsearchtextbox').as ('searchbox');
+    cy.get('@searchbox').type('shoes');
     cy.wait(2000);
     
     //submitting the search
-    cy.get('#nav-search-submit-button').click();
+    cy.get('#nav-search-submit-button').as('serachbutton');
+    cy.get('@serachbutton').click();
     cy.wait(2000);
 
     //validating results to show only shows are searched by searching keywords as shoes
@@ -54,9 +56,13 @@ it('Searching,filtering and adding product', function()
 
     //check that Alert shown as added as well as 1 item in the cart
     cy.get("div[id='mbc-offer-added-to-cart-1'] div[class='a-alert-content']").should('contain', 'Added');
-    cy.get(2000);
-    //return cy.get("div[id='nav-belt'] div[id='nav-cart-count-container'] span[class='nav-cart-count nav-cart-1 nav-progressive-attribute nav-progressive-content']")
+    cy.get(10000);
 
+    //validating that 1 item is added to the cart
+    cy.visit('https://www.amazon.com/gp/cart/view.html/ref=nav_cart');
+    cy.get(10000);    
+    cy.get('span[id="nav-cart-count"]').should('contain', '1');
+    
     })
    
 }
