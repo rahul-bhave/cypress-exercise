@@ -37,17 +37,20 @@ it('Searching,filtering and adding product', function()
     //check that at least 48 items are shown
     cy.get("span[class='a-size-base-plus a-color-base a-text-normal']").should('have.length.at.least', 48)
 
-    //visting first product
-    //cy.visit('https://www.amazon.com/adidas-Grand-Court-Black-White/dp/B07DBGLVLL/ref=sr_1_2?keywords=shoes&qid=1645715451&refinements=p_89%3Aadidas&rnid=7141123011&s=apparel&sr=1-2')
-    cy.get("div[class='s-widget-container s-spacing-small s-widget-container-height-small celwidget slot=MAIN template=SEARCH_RESULTS widgetId=search-results_1'] span[class='a-size-base-plus a-color-base a-text-normal']").click();
-
+    //visting the specific product adidas Grand court black and white shoes
+    cy.visit('https://www.amazon.com/adidas-Grand-Court-Black-White/dp/B07DBGLVLL/ref=sr_1_2?keywords=shoes&qid=1645715451&refinements=p_89%3Aadidas&rnid=7141123011&s=apparel&sr=1-2')
+    
     //Select the size of the shoe as 10
     cy.get("span[id='dropdown_selected_size_name'] span[class='a-button-text a-declarative']").click();
-    cy.get('#native_dropdown_selected_size_name_8').click();
+    cy.get('#native_dropdown_selected_size_name_21').click();
+    cy.get(4000);
 
     //Add the shoe to the cart
     cy.get("span[id='mbc-buybutton-addtocart-1'] input[type='submit']").click();
     cy.get(2000);
+
+    //validating the product added to the cart is Adidas Mens shoes
+    cy.get("span[id='productTitle']").should('contain', "adidas Men's Grand Court Tennis Shoes");
 
     //check that Alert shown as added as well as 1 item in the cart
     cy.get("div[id='mbc-offer-added-to-cart-1'] div[class='a-alert-content']").should('contain', 'Added');
