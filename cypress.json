@@ -1,1 +1,22 @@
-{}
+{
+    "chromeWebSecurity":false,
+    "defaultCommandTimeout": 50000,
+    "pageLoadTimeout": 30000,
+    "reporter": "mochawesome",
+    
+    "env": {
+      "url": "https://www.amazon.com/"
+    },
+    "testFiles": "**/*.js",
+  
+    "retries": {
+      
+      "runMode": 1
+    },
+    "mocha": {
+      "reporterOptions": {
+        "reportDir": "./reports/mochawesome"
+      }
+    }
+
+}
