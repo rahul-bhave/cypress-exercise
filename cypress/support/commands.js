@@ -27,3 +27,8 @@
 Cypress.Commands.add("selectProduct", (productURL) => { 
     cy.visit(productURL);
 })
+// This will select cart menu on the top right corner
+Cypress.Commands.add("selectCart", (cartURL) => {
+    cy.visit(cartURL);
+})
+
