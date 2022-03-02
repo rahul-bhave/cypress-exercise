@@ -132,3 +132,6 @@
     4.3. CI-CD pipeline needs to be setup for the test repo.\
     4.4. Locators to be added in the configuration file.
     4.5. Need to provide support for BDD Framework.
+
+
+

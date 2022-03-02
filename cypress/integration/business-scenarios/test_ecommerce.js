@@ -70,7 +70,11 @@ it('Searching,filtering and adding product', function()
 
     //validating the product added to the cart is Adidas Mens shoes
     productPage.getProductTitle().should('contain',this.data.producttitle);
-    cy.get(10000);
+    cy.get(50000);
+
+    //validating the product added to the cart is Adidas Mens shoes
+    productPage.getProductTitle().should('contain',this.data.producttitle);
+    cy.get(2000);
     
     //check that Alert shown as added as well as 1 item in the cart
     productPage.getAlert().should('contain',this.data.alert);
