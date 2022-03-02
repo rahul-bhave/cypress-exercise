@@ -4,8 +4,10 @@
   "description": "cypress-exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open" : "cypress open"
+    "test": "node_modules\\.bin\\cypress run",
+    "chromeTest": "npm run test -- --browser chrome",
+    "cypress:open": "cypress open",
+    "ecommerceTest": "npm run test -- --spec \"cypress/integration/business-scenarios/*\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,11 @@
   },
   "homepage": "https://github.com/rahul-bhave/cypress-exercise#readme",
   "devDependencies": {
-    "cypress": "^9.2.1"
+    "cypress": "^9.2.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^9.2.1",
+    "mochawesome": "^7.1.0",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.1.0"
   }
 }

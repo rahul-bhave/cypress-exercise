@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-02T12:29:16.623Z",
+    "end": "2022-03-02T12:31:10.525Z",
+    "duration": 113902,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3a04f452-3ba2-4f7f-b6df-313801a10180",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bda61181-192a-46c6-a3d9-bed4af82d926",
+          "title": "Ecommerce Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Searching,filtering and adding product",
+              "fullTitle": "Ecommerce Test Searching,filtering and adding product",
+              "timedOut": null,
+              "duration": 107183,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//creating object of HomePage,ProductPage and CartPage\nconst homePage = new _HomePage.default();\nconst productPage = new _ProductPage.default();\nconst cartPage = new _CartPage.default(); //accessing URL\ncy.visit(Cypress.env('url'));\ncy.wait(10000); //searching for shoes\nhomePage.getSearchBox().type(this.data.productname);\ncy.wait(2000); //submitting the search\nhomePage.submitSearch().click();\ncy.wait(2000); //validating results to show only shows are searched by searching keywords as shoes\nhomePage.getSearchResult().should('contain', this.data.searchtext);\ncy.wait(2000); //clicking on first filter as adidas\nhomePage.getFirstFilter().click();\ncy.wait(2000); //validating that checkbox containing adidas is selected\nhomePage.checkFirstFilter().should('contain', this.data.firstfilter);\ncy.wait(2000); //clicking second filter as Men's Fashion\nhomePage.getSecondFilter().click();\ncy.wait(2000); //validating that Men's fassion filter is applied\nhomePage.checkSecondFilter().should('contain', this.data.secondfilter);\ncy.get(5000); //check that at least 48 items are shown\nhomePage.getResultCountOnOnePage().should('have.length.at.least', this.data.resultsonpage);\ncy.get(2000); //visting the specific product adidas Grand court black and white shoes\ncy.selectProduct(this.data.selectedproduct); //Select the size of the shoe as 10\nproductPage.getDropDown().click();\nproductPage.selectSize().click();\ncy.get(50000); //Add the shoe to the cart\nproductPage.addToCart().click();\ncy.get(10000); //validating the product added to the cart is Adidas Mens shoes\nproductPage.getProductTitle().should('contain', this.data.producttitle);\ncy.get(10000); //check that Alert shown as added as well as 1 item in the cart\nproductPage.getAlert().should('contain', this.data.alert);\ncy.get(10000); //selecting cart\n//cy.visit(this.data.cart);\ncy.selectCart(this.data.cart);\ncy.get(50000); //validating the count on the cart\ncartPage.getCartCount().should('contain', this.data.cartcount);",
+              "err": {},
+              "uuid": "471f379e-29c3-4e75-9be9-cd2725097138",
+              "parentUUID": "bda61181-192a-46c6-a3d9-bed4af82d926",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "471f379e-29c3-4e75-9be9-cd2725097138"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 107183,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.0"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.1.0"
+    }
+  }
+}

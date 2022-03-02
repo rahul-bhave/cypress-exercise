@@ -40,8 +40,98 @@
 ## Open Items from the test flow:
 
 4. Open items:\
-    4.1. Currently test can be run only via cypress test runner.\
+    4.1. Currently test can be run from terminal using command `npm run ecommerceTest`\
+
+```
+    PS C:\Users\rahulbhave\code\cypress-exercise> npm run ecommerceTest      
+
+> cypress-exercise@1.0.0 ecommerceTest
+> npm run test -- --spec "cypress/integration/business-scenarios/*"
+
+
+> cypress-exercise@1.0.0 test
+> node_modules\.bin\cypress run "--spec" "cypress/integration/business-scenarios/*"
+
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        9.2.1                                                                          │
+  │ Browser:        Electron 94 (headless)                                                         │
+  │ Node Version:   v16.13.2 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (business-scenarios/test_ecommerce.js)                                 │
+  │ Searched:       cypress\integration\business-scenarios\*                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  business-scenarios/test_ecommerce.js                                            (1 of 1)
+  Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+
+  Why you should do it regularly:
+   https://github.com/browserslist/browserslist#browsers-data-updating
+
+
+  Ecommerce Test
+    √ Searching,filtering and adding product (107183ms)
+
+
+  1 passing (2m)
+
+[mochawesome] Report JSON saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.json
+
+[mochawesome] Report HTML saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 minute, 53 seconds                                                             │
+  │ Spec Ran:     business-scenarios/test_ecommerce.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF
+  -  Finished processing: C:\Users\rahulbhave\code\cypress-exercise\cypress\videos\bu   (24 seconds)
+                          siness-scenarios\test_ecommerce.js.mp4
+
+    Compression progress:  100%
+
+   ====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  business-scenarios/test_ecommerce.j      01:53        1        1        -        -        - │
+  │    s                                                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        01:53        1        1        -        -        -
+
+    PS C:\Users\rahulbhave\code\cypress-exercise>
+
+
+    ```
+
     4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
     4.3. CI-CD pipeline needs to be setup for the test repo.\
-    4.4. Test reporting and screenshots to be configured for the repo.\
-    4.5. Locators to be added in the configuration file.
+    4.4. Locators to be added in the configuration file.
+    4.5. Need to provide support for BDD Framework.
+
+
+

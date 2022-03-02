@@ -1,6 +1,6 @@
 {
     "chromeWebSecurity":false,
-    "defaultCommandTimeout": 8000,
+    "defaultCommandTimeout": 50000,
     "pageLoadTimeout": 30000,
     "reporter": "mochawesome",
     
@@ -13,9 +13,6 @@
       
       "runMode": 1
     },
-    
-   
-    
     "mocha": {
       "reporterOptions": {
         "reportDir": "./reports/mochawesome"

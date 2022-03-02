@@ -66,6 +66,10 @@ it('Searching,filtering and adding product', function()
 
     //Add the shoe to the cart
     productPage.addToCart().click();
+    cy.get(10000);
+
+    //validating the product added to the cart is Adidas Mens shoes
+    productPage.getProductTitle().should('contain',this.data.producttitle);
     cy.get(50000);
 
     //validating the product added to the cart is Adidas Mens shoes
