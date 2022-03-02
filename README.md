@@ -40,10 +40,11 @@
 ## Open Items from the test flow:
 
 4. Open items:\
-    4.1. Currently test can be run from terminal using command `npm run ecommerceTest`\
+
+4.1. Currently test can be run from terminal using command `npm run ecommerceTest`\
 
 ```
-    PS C:\Users\rahulbhave\code\cypress-exercise> npm run ecommerceTest      
+    PS C:\..\..\..\cypress-exercise> npm run ecommerceTest      
 
 > cypress-exercise@1.0.0 ecommerceTest
 > npm run test -- --spec "cypress/integration/business-scenarios/*"
@@ -83,9 +84,9 @@
 
   1 passing (2m)
 
-[mochawesome] Report JSON saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.json
+  [mochawesome] Report JSON saved to C:\..\..\..\cypress-exercise\mochawesome-report\mochawesome.json
 
-[mochawesome] Report HTML saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.html
+  [mochawesome] Report HTML saved to C:\..\..\..\cypress-exercise\mochawesome-report\mochawesome.html
 
 
   (Results)
@@ -106,7 +107,7 @@
   (Video)
 
   -  Started processing:  Compressing to 32 CRF
-  -  Finished processing: C:\Users\rahulbhave\code\cypress-exercise\cypress\videos\bu   (24 seconds)
+  -  Finished processing: C:\..\..\..\cypress-exercise\cypress\videos\bu   (24 seconds)
                           siness-scenarios\test_ecommerce.js.mp4
 
     Compression progress:  100%
@@ -127,11 +128,96 @@
 
 
 ```
+Cucumber BDD support alos has been provided:
 
-    4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
-    4.3. CI-CD pipeline needs to be setup for the test repo.\
-    4.4. Locators to be added in the configuration file.
-    4.5. Need to provide support for BDD Framework.
+```
+
+PS C:\Users\rahulbhave\code\cypress-exercise> npm run ecommerceTest
+
+> cypress-exercise@1.0.0 ecommerceTest
+> npm run test -- --spec "cypress/integration/business-scenarios/BDD/ecommerce*"
+
+
+> cypress-exercise@1.0.0 test
+> node_modules\.bin\cypress run "--spec" "cypress/integration/business-scenarios/BDD/ecommerce*"
 
 
 
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        9.2.1                                                                          │
+  │ Browser:        Electron 94 (headless)                                                         │
+  │ Node Version:   v16.13.2 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (business-scenarios/BDD/ecommerce.feature)                             │
+  │ Searched:       cypress\integration\business-scenarios\BDD\ecommerce*                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  business-scenarios/BDD/ecommerce.feature                                        (1 of 1)
+
+
+  End to end ecommerce validation
+    √ Ecommerce product search,filter and add to cart (73502ms)
+
+
+  1 passing (2m)
+
+[mochawesome] Report JSON saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.json
+
+[mochawesome] Report HTML saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     2 minutes, 27 seconds                                                            │
+  │ Spec Ran:     business-scenarios/BDD/ecommerce.feature                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\rahulbhave\code\cypress-exercise\cypress\screenshots\business-scenarios     (1280x720)
+     \BDD\ecommerce.feature\End to end ecommerce validation -- Ecommerce product sear
+     ch,filter and add to cart (failed).png
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF
+    Compression progress:  66%
+  -  Finished processing: C:\Users\rahulbhave\code\cypress-exercise\cypress\videos\bu   (30 seconds)
+                          siness-scenarios\BDD\ecommerce.feature.mp4
+
+    Compression progress:  100%
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  business-scenarios/BDD/ecommerce.fe      02:27        1        1        -        -        - │
+  │    ature                                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        02:27        1        1        -        -        -
+
+
+```
+
+4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
+4.3. CI-CD pipeline needs to be setup for the test repo.\
+4.4. Locators to be added in the configuration file.

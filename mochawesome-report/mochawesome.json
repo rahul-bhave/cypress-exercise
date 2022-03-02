@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-02T12:29:16.623Z",
-    "end": "2022-03-02T12:31:10.525Z",
-    "duration": 113902,
+    "start": "2022-03-04T11:32:28.765Z",
+    "end": "2022-03-04T11:34:56.781Z",
+    "duration": 148016,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3a04f452-3ba2-4f7f-b6df-313801a10180",
+      "uuid": "d73b1116-43fe-40e2-b7c3-989ba7d4b81b",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,40 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "bda61181-192a-46c6-a3d9-bed4af82d926",
-          "title": "Ecommerce Test",
+          "uuid": "c4de8c1b-5a42-43d7-b374-fc2f52a47496",
+          "title": "End to end ecommerce validation",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Searching,filtering and adding product",
-              "fullTitle": "Ecommerce Test Searching,filtering and adding product",
+              "title": "Ecommerce product search,filter and add to cart",
+              "fullTitle": "End to end ecommerce validation Ecommerce product search,filter and add to cart",
               "timedOut": null,
-              "duration": 107183,
+              "duration": 73502,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//creating object of HomePage,ProductPage and CartPage\nconst homePage = new _HomePage.default();\nconst productPage = new _ProductPage.default();\nconst cartPage = new _CartPage.default(); //accessing URL\ncy.visit(Cypress.env('url'));\ncy.wait(10000); //searching for shoes\nhomePage.getSearchBox().type(this.data.productname);\ncy.wait(2000); //submitting the search\nhomePage.submitSearch().click();\ncy.wait(2000); //validating results to show only shows are searched by searching keywords as shoes\nhomePage.getSearchResult().should('contain', this.data.searchtext);\ncy.wait(2000); //clicking on first filter as adidas\nhomePage.getFirstFilter().click();\ncy.wait(2000); //validating that checkbox containing adidas is selected\nhomePage.checkFirstFilter().should('contain', this.data.firstfilter);\ncy.wait(2000); //clicking second filter as Men's Fashion\nhomePage.getSecondFilter().click();\ncy.wait(2000); //validating that Men's fassion filter is applied\nhomePage.checkSecondFilter().should('contain', this.data.secondfilter);\ncy.get(5000); //check that at least 48 items are shown\nhomePage.getResultCountOnOnePage().should('have.length.at.least', this.data.resultsonpage);\ncy.get(2000); //visting the specific product adidas Grand court black and white shoes\ncy.selectProduct(this.data.selectedproduct); //Select the size of the shoe as 10\nproductPage.getDropDown().click();\nproductPage.selectSize().click();\ncy.get(50000); //Add the shoe to the cart\nproductPage.addToCart().click();\ncy.get(10000); //validating the product added to the cart is Adidas Mens shoes\nproductPage.getProductTitle().should('contain', this.data.producttitle);\ncy.get(10000); //check that Alert shown as added as well as 1 item in the cart\nproductPage.getAlert().should('contain', this.data.alert);\ncy.get(10000); //selecting cart\n//cy.visit(this.data.cart);\ncy.selectCart(this.data.cart);\ncy.get(50000); //validating the count on the cart\ncartPage.getCartCount().should('contain', this.data.cartcount);",
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
               "err": {},
-              "uuid": "471f379e-29c3-4e75-9be9-cd2725097138",
-              "parentUUID": "bda61181-192a-46c6-a3d9-bed4af82d926",
+              "uuid": "1242ced5-18ed-42fc-b973-9ffedc6fe21c",
+              "parentUUID": "c4de8c1b-5a42-43d7-b374-fc2f52a47496",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "471f379e-29c3-4e75-9be9-cd2725097138"
+            "1242ced5-18ed-42fc-b973-9ffedc6fe21c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 107183,
+          "duration": 73502,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
