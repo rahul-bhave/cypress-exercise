@@ -40,10 +40,154 @@
 ## Open Items from the test flow:
 
 4. Open items:\
-    4.1. Currently test can be run from terminal using command `npm run ecommerceTest`\
+
+4.1. Currently test can be run from terminal using command `npm run ecommerceBDDTest` or `npm run ecommerceTest` form VS Terminal, In case you want to run later then you need to set `"testFiles": "**/*.feature"` in `cypress.json`\
+
+Test run for BDD test case:
 
 ```
-    PS C:\Users\rahulbhave\code\cypress-exercise> npm run ecommerceTest      
+PS C:\Users\XXXX\XXX\cypress-exercise> npm run ecommerceTest
+
+> cypress-exercise@1.0.0 ecommerceTest
+> npm run test -- --spec "cypress/integration/business-scenarios/*"
+
+
+> cypress-exercise@1.0.0 test
+> node_modules\.bin\cypress run "--spec" "cypress/integration/business-scenarios/*"
+
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        9.2.1                                                                          │
+  │ Browser:        Electron 94 (headless)                                                         │
+  │ Node Version:   v16.13.2 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (business-scenarios/test_ecommerce.js)                                 │
+  │ Searched:       cypress\integration\business-scenarios\*                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  business-scenarios/test_ecommerce.js                                            (1 of 1)
+Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+Why you should do it regularly:
+https://github.com/browserslist/browserslist#browsers-data-updating
+
+
+  Ecommerce Test
+    √ Searching,filtering and adding product (73727ms)
+
+
+  1 passing (1m)
+
+[mochawesome] Report JSON saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.json
+
+[mochawesome] Report HTML saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 minute, 18 seconds                                                             │
+  │ Spec Ran:     business-scenarios/test_ecommerce.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+PS C:\Users\XXXX\XXX\cypress-exercise> npm run ecommerceBDDTest
+
+> cypress-exercise@1.0.0 ecommerceBDDTest
+> npm run test -- --spec "cypress/integration/business-scenarios/BDD/ecommerce*"
+
+
+> cypress-exercise@1.0.0 test
+> node_modules\.bin\cypress run "--spec" "cypress/integration/business-scenarios/BDD/ecommerce*"
+
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        9.2.1                                                                          │
+  │ Browser:        Electron 94 (headless)                                                         │
+  │ Node Version:   v16.13.2 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          1 found (business-scenarios/BDD/ecommerce.feature)                             │
+  │ Searched:       cypress\integration\business-scenarios\BDD\ecommerce*                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  business-scenarios/BDD/ecommerce.feature                                        (1 of 1)
+
+
+  End to end ecommerce validation
+    √ Ecommerce product search,filter and add to cart (87355ms)
+
+
+  1 passing (2m)
+
+[mochawesome] Report JSON saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.json
+
+[mochawesome] Report HTML saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 minute, 39 seconds                                                             │
+  │ Spec Ran:     business-scenarios/BDD/ecommerce.feature                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Started processing:  Compressing to 32 CRF
+  -  Finished processing: C:\Users\XXXX\XXX\cypress-exercise\cypress\videos\bu   (21 seconds)
+                          siness-scenarios\BDD\ecommerce.feature.mp4
+
+    Compression progress:  100%
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  business-scenarios/BDD/ecommerce.fe      01:39        1        1        -        -        - │
+  │    ature                                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        01:39        1        1        -        -        -  
+
+```
+
+Test run for POM Test case:
+
+```
+    PS C:\..\..\..\cypress-exercise> npm run ecommerceTest      
 
 > cypress-exercise@1.0.0 ecommerceTest
 > npm run test -- --spec "cypress/integration/business-scenarios/*"
@@ -83,9 +227,9 @@
 
   1 passing (2m)
 
-[mochawesome] Report JSON saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.json
+  [mochawesome] Report JSON saved to C:\..\..\..\cypress-exercise\mochawesome-report\mochawesome.json
 
-[mochawesome] Report HTML saved to C:\Users\rahulbhave\code\cypress-exercise\mochawesome-report\mochawesome.html
+  [mochawesome] Report HTML saved to C:\..\..\..\cypress-exercise\mochawesome-report\mochawesome.html
 
 
   (Results)
@@ -106,7 +250,7 @@
   (Video)
 
   -  Started processing:  Compressing to 32 CRF
-  -  Finished processing: C:\Users\rahulbhave\code\cypress-exercise\cypress\videos\bu   (24 seconds)
+  -  Finished processing: C:\..\..\..\cypress-exercise\cypress\videos\bu   (24 seconds)
                           siness-scenarios\test_ecommerce.js.mp4
 
     Compression progress:  100%
@@ -128,10 +272,10 @@
 
 ```
 
-    4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
-    4.3. CI-CD pipeline needs to be setup for the test repo.\
-    4.4. Locators to be added in the configuration file.
-    4.5. Need to provide support for BDD Framework.
+4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
+4.3. CI-CD pipeline needs to be setup for the test repo.\
+4.4. Locators to be added in the configuration file.
+
 
 
 
