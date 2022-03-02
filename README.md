@@ -126,7 +126,7 @@
     PS C:\Users\rahulbhave\code\cypress-exercise>
 
 
-    ```
+```
 
     4.2. Smart Wait function to be added, so lot of waits added in the test can be avoided, also this will reduce the flakiness of the test.\
     4.3. CI-CD pipeline needs to be setup for the test repo.\
