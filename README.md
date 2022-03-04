@@ -46,67 +46,6 @@
 Test run for BDD test case:
 
 ```
-PS C:\Users\XXXX\XXX\cypress-exercise> npm run ecommerceTest
-
-> cypress-exercise@1.0.0 ecommerceTest
-> npm run test -- --spec "cypress/integration/business-scenarios/*"
-
-
-> cypress-exercise@1.0.0 test
-> node_modules\.bin\cypress run "--spec" "cypress/integration/business-scenarios/*"
-
-
-
-====================================================================================================
-
-  (Run Starting)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Cypress:        9.2.1                                                                          │
-  │ Browser:        Electron 94 (headless)                                                         │
-  │ Node Version:   v16.13.2 (C:\Program Files\nodejs\node.exe)                                    │
-  │ Specs:          1 found (business-scenarios/test_ecommerce.js)                                 │
-  │ Searched:       cypress\integration\business-scenarios\*                                       │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-
-  Running:  business-scenarios/test_ecommerce.js                                            (1 of 1)
-Browserslist: caniuse-lite is outdated. Please run:
-npx browserslist@latest --update-db
-
-Why you should do it regularly:
-https://github.com/browserslist/browserslist#browsers-data-updating
-
-
-  Ecommerce Test
-    √ Searching,filtering and adding product (73727ms)
-
-
-  1 passing (1m)
-
-[mochawesome] Report JSON saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.json
-
-[mochawesome] Report HTML saved to C:\Users\XXXX\XXX\cypress-exercise\mochawesome-report\mochawesome.html
-
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        1                                                                                │
-  │ Passing:      1                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     1 minute, 18 seconds                                                             │
-  │ Spec Ran:     business-scenarios/test_ecommerce.js                                             │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-  (Video)
 PS C:\Users\XXXX\XXX\cypress-exercise> npm run ecommerceBDDTest
 
 > cypress-exercise@1.0.0 ecommerceBDDTest
