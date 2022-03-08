@@ -1,0 +1,30 @@
+name: Cypress Github Action
+on:
+  push:
+    branches:
+      - 'master'
+  # Add this part if you want to schedule test rerun
+  # schedule:
+  #   - cron: '0 8 1-31 * *'
+
+jobs:
+  
+  cypress-e2e-test:
+    name: Test run
+    runs-on: ubuntu-18.04
+    container: cypress/browsers:node16.5.0-chrome94-ff93
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install a project with a clean slate
+        run: |
+          npm ci
+          $(npm bin)/cypress cache path
+          $(npm bin)/cypress cache list
+          $(npm bin)/cypress verify
+      
+      - name: Run Cypress tests
+        run: npm run ecommerceBDDTest
+        continue-on-error: true
+
+
